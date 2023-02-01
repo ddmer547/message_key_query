@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25">
+  <Document name="keyQuery.ZPM">
+    <Module>
+      <Name>keyQuery</Name>
+      <Version>2.0.1</Version>
+      <Description>交互服务2.0</Description>
+      <Keywords>keyQuery</Keywords>
+      <Author>
+        <Person>王喆</Person>
+        <Organization>武汉</Organization>
+        <CopyrightDate>2023</CopyrightDate>
+        <License>MIT</License>
+        <Notes>代码</Notes>
+      </Author>
+      <Packaging>keyQuery</Packaging>
+      <!-- 导入代码 -->
+      <Resource Name="KEYQUERY.PKG"/>
+      <Resource Name="KEYQUERYPKG.PKG"/>
+      <Resource Name="VisitInfo.PKG"/>
+      <!--导入查找表-->
+      <Resource Name="LookupTable.GBL"/> 
+	  <SystemSetting Name="CSP.DefaultFileCharset" Value="UTF-8"/>
+      <SourcesRoot>src</SourcesRoot>
+    </Module>
+  </Document>
+</Export>
