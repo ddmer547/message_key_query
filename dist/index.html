@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=favicon.ico><title>患者</title><script src=config.js></script><link href=css/chunk-030d7c80.fa935dc4.css rel=prefetch><link href=css/chunk-03215b58.0218dccc.css rel=prefetch><link href=css/chunk-0d60b93e.d7a0c6c4.css rel=prefetch><link href=css/chunk-1def84c9.6e2b7d98.css rel=prefetch><link href=css/chunk-213d2c3a.e6e5707f.css rel=prefetch><link href=css/chunk-215c5911.5e579bfa.css rel=prefetch><link href=css/chunk-36e9daee.2b6ff59e.css rel=prefetch><link href=css/chunk-3d98c2fe.a55654fd.css rel=prefetch><link href=css/chunk-3fa1845c.f5e5ff64.css rel=prefetch><link href=css/chunk-45dd2902.43b2c7df.css rel=prefetch><link href=css/chunk-4fe3cc7f.c6eb88d5.css rel=prefetch><link href=css/chunk-51e36ed9.1c8d6db2.css rel=prefetch><link href=css/chunk-6003d86a.6b71e01b.css rel=prefetch><link href=css/chunk-6a901727.c7d3b205.css rel=prefetch><link href=css/chunk-cf88d570.d46ecdfc.css rel=prefetch><link href=css/chunk-fe91cff6.6af42c93.css rel=prefetch><link href=js/chunk-030d7c80.ddb983a9.js rel=prefetch><link href=js/chunk-03215b58.e632dfb8.js rel=prefetch><link href=js/chunk-0d60b93e.1ac9cc53.js rel=prefetch><link href=js/chunk-1def84c9.f718a320.js rel=prefetch><link href=js/chunk-213d2c3a.95bc5b43.js rel=prefetch><link href=js/chunk-215c5911.467defda.js rel=prefetch><link href=js/chunk-2d0aa5b8.45acb105.js rel=prefetch><link href=js/chunk-36e9daee.42c3737d.js rel=prefetch><link href=js/chunk-3d98c2fe.00e21a5a.js rel=prefetch><link href=js/chunk-3fa1845c.b40a89fe.js rel=prefetch><link href=js/chunk-45dd2902.9ec00278.js rel=prefetch><link href=js/chunk-4fe3cc7f.ba943fd5.js rel=prefetch><link href=js/chunk-51e36ed9.ceb3beee.js rel=prefetch><link href=js/chunk-6003d86a.6a68dbba.js rel=prefetch><link href=js/chunk-6a901727.57f9e0fe.js rel=prefetch><link href=js/chunk-cf88d570.628978d2.js rel=prefetch><link href=js/chunk-fe91cff6.e29f973b.js rel=prefetch><link href=css/app.e665e494.css rel=preload as=style><link href=css/chunk-vendors.8d3b95aa.css rel=preload as=style><link href=js/app.a3dc95f2.js rel=preload as=script><link href=js/chunk-vendors.fdcfef87.js rel=preload as=script><link href=css/chunk-vendors.8d3b95aa.css rel=stylesheet><link href=css/app.e665e494.css rel=stylesheet></head><script></script><body><noscript><strong>We're sorry but template doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><p id=tool style="display: none;">推荐使火狐浏览器, <span style="cursor: pointer;" onclick=toDownload()>点击下载</span></p><div id=app></div><script src=js/chunk-vendors.fdcfef87.js></script><script src=js/app.a3dc95f2.js></script></body><script>function getBrowserInfo() {
+    var Sys = {};
+    var ua = navigator.userAgent.toLowerCase();
+    var agent = ua.indexOf("win64") >= 0 || ua.indexOf("wow64") >= 0 ? '64' : '32';
+    var s;
+    (s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] :
+      (s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] :
+        (s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] :
+          (s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] :
+            (s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
+    Sys.agent = agent
+    return Sys
+  }
+  //获取当前的浏览器信息
+  var sys = getBrowserInfo();
+  if (sys.ie) {
+    if (sys.ie < 9) {
+      document.getElementById("tool").style.display = "block"
+    }
+  }
+  function toDownload() {
+    console.log(sys.agent);
+    var url = 'http://192.168.100.211:19000'; // 服务器地址
+    var params = {
+      typeBit: sys.agent,
+      typeName: '',
+      pageNum: 1,
+      pageSize: 15
+    };
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', url + '/alu/sys-browser/v1/list');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify(params));
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        console.log(xhr.responseText);
+        var res = JSON.parse(xhr.responseText)
+        if (res.data.records.length) {
+          window.open(res.data.records[0].enclosureFiles[0].url)
+        }else{
+          alert("请联系管理员上传浏览器应用")
+        }
+      }
+    }
+  }</script></html>
