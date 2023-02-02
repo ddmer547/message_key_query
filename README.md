@@ -12,11 +12,11 @@
 ### 演示效果：
   我们知道进入IRIS的production的实例化对象会以xml的形式存在，而xPath可以直接从字符串的角度直接取到我们需要的值，如果我们把每个服务的每个关键字的xPath路径单独保存，在消息发送的时候通过xPath把 [关键字:关键值:服务名:时间:sessionID] 单独存储起来，当我们需要通过关键字段查询某个患者经历的服务或者消息时候，可以直接得到其列表展示。如图所示：
 
-![](.\img\home1.png)
+![](./img/home1.png)
 
 加载出来的列表还可以点击跳转到指定的可视化路径中去：
 
-![](.\img\home2.png)
+![](./img/home2.png)
 
 代码的程序设计思路：https://cn.community.intersystems.com/node/525986
 
@@ -50,7 +50,7 @@ https://docs.intersystems.com/healthconnect20223/csp/documatic/%25CSP.Documatic.
 
 在windows中安装IRISHealth和JDK，在实例中新增KEYQUERY命名空间，新增/keyquery/api的web应用程序启动REST:[/keyquery/api]验证方法给未验证，角色给%ALL，如图所示：
 
-![](E:\12IRIS竞赛\message_key_query\img\url1.png)
+![](./img/url1.png)
 
 ### 下载源码到本地
 
@@ -60,7 +60,7 @@ git clone https://github.com/ddmer547/message_key_query.git
 
 打开Terminal进入指定的命名空间，使用zpm安装代码,如图所示：
 
-![image-20230202101853290](.\img\terminal.png)
+![image-20230202101853290](./img/terminal.png)
 
 等待成功，启动production，如图所示：
 
@@ -78,7 +78,7 @@ d ##class(KEYQUERY.SOA.LogQuery.testdata).testAdd()
 
 在IP中输入你服务器的IP端口：我的是http://127.0.0.1:52777 如果使用的是内置测试数据，直接点发送，得到结果：如图：
 
-![image-20230202113804760](.\img\jietu.png)
+![image-20230202113804760](./img/jietu.png)
 
 
 # English Description
