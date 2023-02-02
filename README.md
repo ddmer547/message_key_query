@@ -64,7 +64,7 @@ git clone https://github.com/ddmer547/message_key_query.git
 
 等待成功，启动production，如图所示：
 
-![image-20230202112507068](.\img\prod.png)
+![image-20230202112507068](./img/prod.png)
 
 增加测试数据
 
