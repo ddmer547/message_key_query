@@ -75,6 +75,7 @@ d ##class(KEYQUERY.SOA.LogQuery.testdata).testAdd()
 你也可以使用soapui模拟发送数据，相关模板，在./soapui
 
 将dist中的内容发布到nodejs服务器或者使用不校验跨域的浏览器打开./dist/index.html.
+前端演示地址: https://ddmer547.github.io/message_key_query/#/iris
 
 在IP中输入你服务器的IP端口：我的是http://127.0.0.1:52777 如果使用的是内置测试数据，直接点发送，得到结果：如图：
 
