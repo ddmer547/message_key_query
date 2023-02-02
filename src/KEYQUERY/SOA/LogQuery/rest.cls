@@ -101,6 +101,7 @@ ClassMethod GetKeyLogInfo() As %Status
             _" and {fn RIGHT(%EXTERNAL(t.CreateTime),999)} > '"_startTime_"'"
             _" and {fn RIGHT(%EXTERNAL(t.CreateTime),999)} < '"_endTime_"' order by t.SessionID Desc"
   Set rsZT = ##class(%SQL.Statement).%ExecDirect(,strSqlZT)
+    s patientzt = ""
   If rsZT.%Next(){
 	  If ((rsZT.%Get("ServiceName")="就诊卡信息新增服务")||(rsZT.%Get("ServiceName")="就诊卡信息新增服务")){Set patientzt = "登记"}
       If ((rsZT.%Get("ServiceName")="门诊挂号信息新增服务")||(rsZT.%Get("ServiceName")="门诊挂号信息更新服务")){Set patientzt = "门诊"}
