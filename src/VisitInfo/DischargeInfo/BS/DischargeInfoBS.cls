@@ -7,6 +7,12 @@ Parameter SERVICENAME = "DischargeInfoBS";
 
 Parameter NAMESPACE = "http://bkgtsoft.com";
 
+Method send(pInput As %String) As %String [ WebMethod ]
+{
+	Set retrunstr=..AsyncHandle(pInput,"Request","VisitInfo.DischargeInfo.MSG.DischargeInfoAdd")
+	Quit retrunstr
+}
+
 /// MethodName:	DischargeInfoAdd<br>
 /// Summary:    出院登记信息新增服务<br>
 /// Parameter： pInput(%String) 输入xml格式字符串<br>

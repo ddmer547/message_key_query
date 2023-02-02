@@ -13,6 +13,13 @@ Parameter SERVICENAME = "EncounterCardBS";
 /// SOAP namespace for the WebService
 Parameter NAMESPACE = "http://bkgtsoft.com";
 
+Method send(pInput As %String) As %String [ WebMethod ]
+{
+	
+	Set retrunstr=..AsyncHandle(pInput,"Request","VisitInfo.Encounter.MSG.EncounterCardInfoAdd")
+	Quit retrunstr
+}
+
 /// MethodName：EncounterCardInfoAdd<br>
 /// Summary:    就诊卡信息新增服务<br>
 /// Parameter： pInput(%String) 输入xml格式字符串<br>

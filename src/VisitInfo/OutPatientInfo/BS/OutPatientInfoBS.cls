@@ -25,6 +25,12 @@ Method OutPatientInfoAdd(pInput As %String) As %String [ WebMethod ]
 	Quit retrunstr
 }
 
+Method send(pInput As %String) As %String [ WebMethod ]
+{
+	Set retrunstr=..AsyncHandle(pInput,"Request","VisitInfo.OutPatientInfo.MSG.OutPatientInfoAdd")
+	Quit retrunstr
+}
+
 /// MethodName：DocumentRegister<br>
 /// Summary:    门诊挂号信息更新服务<br>
 /// Parameter： pInput(%String) 输入xml格式字符串<br>

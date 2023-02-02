@@ -25,6 +25,12 @@ Method TransferInfoAdd(pInput As %String) As %String [ WebMethod ]
 	Quit retrunstr
 }
 
+Method send(pInput As %String) As %String [ WebMethod ]
+{
+	Set retrunstr=..AsyncHandle(pInput,"Request","VisitInfo.TransferInfo.MSG.TransferInfoAdd")
+	Quit retrunstr
+}
+
 /// MethodName：TransferInfoUpdate<br>
 /// Summary:    住院转科信息更新服务<br>
 /// Parameter： pInput(%String) 输入xml格式字符串<br>
