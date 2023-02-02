@@ -64,11 +64,11 @@ git clone https://github.com/ddmer547/message_key_query.git
 
 Open Terminal to enter the specified namespace, and use the zpm installation code, as shown in the figure:
 
-![image-20230202101853290](E:\12IRIS竞赛\message_key_query\img\terminal.png)
+![image-20230202101853290](img/terminal.png)
 
 Wait for success and start production, as shown in the figure:
 
-![image-20230202112507068](E:\12IRIS竞赛\message_key_query\img\prod.png)
+![image-20230202112507068](img/prod.png)
 
 Add test data
 
@@ -82,7 +82,7 @@ Publish the content in dist to the nodejs server or open it with a browser that 
 
 Enter the IP port of your server in IP: mine is http://127.0.0.1:52777 If the built-in test data is used, directly click Send to get the result: as shown in the figure:
 
-![image-20230202113804760](E:\12IRIS竞赛\message_key_query\img\jietu.png)
+![image-20230202113804760](img/jietu.png)
 
 # Summary
 
